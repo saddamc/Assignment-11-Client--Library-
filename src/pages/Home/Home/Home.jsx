@@ -1,9 +1,12 @@
+import Banner from "../Banner/Banner";
+
 
 
 const Home = () => {
     return (
-        <div>
-            <h2>This is HOme</h2>
+        <div className="font-Roboto">
+            <Banner></Banner>
+
         </div>
     );
 };
