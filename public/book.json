@@ -1,0 +1,112 @@
+ [
+    {
+      "image": "https://i.ibb.co/R2JGp3Q/1.png",
+      "name": "WHAT IS LIFE?",
+      "author": "Momenz Vong",
+      "rating": 5,
+      "category": "Novel"
+    },
+    {
+      "image": "https://i.ibb.co/Jddyhmm/3.png",
+      "name": "Blew In The Wind",
+      "author": "Arifa Pamuss",
+      "rating": 4,
+      "category": "Novel"
+    },
+    {
+      "image": "https://i.ibb.co/PGgdHQP/7.png",
+      "name": "Charlottes Web",
+      "author": "E.B. White",
+      "rating": 4,
+      "category": "Novel"
+    },
+
+    {
+      "image": "https://i.ibb.co/R3s1Mf3/8.png",
+      "name": "World of Numbers",
+      "author": "Dan Brown",
+      "rating": 4,
+      "category": "Thriller"
+    },
+    {
+      "image": "https://i.ibb.co/rbrkNt6/9.png",
+      "name": "Pictorial Dictionary",
+      "author": "Gillian Flynn",
+      "rating": 4,
+      "category": "Thriller"
+    },
+    {
+      "image": "https://i.ibb.co/R4vML6S/10.png",
+      "name": "The Sleep Revolution",
+      "author": "Arianna Huffington",
+      "rating": 4,
+      "category": "Thriller"
+    },
+ 
+    {
+      "image": "https://i.ibb.co/GPqQYvJ/2.png",
+      "name": "The Untold Story",
+      "author": "Pyramid",
+      "rating": 5,
+      "category": "History"
+    },
+    {
+      "image": "https://i.ibb.co/rtPDj2w/5.png",
+      "name": "The Golden Memories",
+      "author": "Maksurez Kotka",
+      "rating": 5,
+      "category": "History"
+    },
+    {
+      "image": "https://i.ibb.co/rwzz9Dc/11.png",
+      "name": "Margaret Thatcher",
+      "author": "Hersele Alone",
+      "rating": 5,
+      "category": "History"
+    },
+ 
+    {
+      "image": "https://i.ibb.co/WkYffVS/6.png",
+      "name": "Giraffes Can't Dance",
+      "author": "Giles Andreae",
+      "rating": 5,
+      "category": "Drama"
+    },
+    {
+      "image": "https://i.ibb.co/pLbSY5t/12.png",
+      "name": "Micro Economics",
+      "author": "V.K. Ohri",
+      "rating": 4,
+      "category": "Drama"
+    },
+    {
+      "image": "https://i.ibb.co/qgGCKgb/13.jpg",
+      "name": "The Catcher in the RYE",
+      "author": "Arthur Miller",
+      "rating": 4,
+      "category": "Drama"
+    },
+   
+    {
+      "image": "https://i.ibb.co/CQ7MJVk/14.jpg",
+      "name": "Dune",
+      "author": "Frank Herbert",
+      "rating": 5,
+      "category": "Sci-Fi"
+    },
+    {
+      "image": "https://i.ibb.co/jvF9CPm/15.jpg",
+      "name": "The Hitchhiker's Guide to the Galaxy",
+      "author": "Douglas Adams",
+      "rating": 4,
+      "category": "Sci-Fi"
+    },
+    {
+      "image": "https://i.ibb.co/ryygdgY/16.jpg",
+      "name": "Neuromancer",
+      "author": "William Gibson",
+      "rating": 4,
+      "category": "Sci-Fi"
+    }
+  ]
+
