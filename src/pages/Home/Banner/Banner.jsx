@@ -3,9 +3,9 @@ import "swiper/swiper-bundle.css";
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
 import "./Banner.css"
-import header1 from "../../../../public/header1.png"
-import header2 from "../../../../public/header2.jpg"
-import header3 from "../../../../public/header3.jpg"
+import header1 from "../../../assets/images/header1.png";
+import header2 from "../../../assets/images/header2.jpg";
+import header3 from "../../../assets/images/header3.jpg";
 
 
 const Banner = () => {

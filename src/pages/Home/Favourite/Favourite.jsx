@@ -1,6 +1,7 @@
-import img1 from "../../../../public/f-1.jpg"
-import img2 from "../../../../public/f-2.jpg"
-import img3 from "../../../../public/f-3.jpg"
+import img1 from "../../../assets/images/f-1.jpg";
+import img2 from "../../../assets/images/f-2.jpg";
+import img3 from "../../../assets/images/f-3.jpg";
+
 
 const Favourite = () => {
     return (
