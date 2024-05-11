@@ -1,4 +1,6 @@
 import Banner from "../Banner/Banner";
+import Books from "../Books/Books";
+import Favourite from "../Favourite/Favourite";
 
 
 
@@ -6,6 +8,8 @@ const Home = () => {
     return (
         <div className="font-Roboto">
             <Banner></Banner>
+            <Favourite></Favourite>
+            <Books></Books>
 
         </div>
     );

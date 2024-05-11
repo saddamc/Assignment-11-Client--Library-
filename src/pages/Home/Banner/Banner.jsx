@@ -11,7 +11,7 @@ import header3 from "../../../../public/header3.jpg"
 const Banner = () => {
     return (
         <div >
-            <div className="banner-slider mx-auto mt-4">
+            <div className="banner-slider mx-auto mt-4 relative">
                 <Swiper
                     className='relative group'
                     spaceBetween={50}
@@ -23,7 +23,7 @@ const Banner = () => {
                     modules={[Navigation]}
                 >
                     <SwiperSlide>
-                        <div className="image relative h-[750px] w-[1600px] mx-auto bg-[#FFF1DE]">
+                        <div className="image relative  h-[850px] md:h-[850] lg:h-[750px] w-[1600px] mx-auto bg-[#FFF1DE]">
 
                             <div className="lg:flex justify-between ">
                                 <div className="content justify-start title-content my-auto items-center lg:mt-[200px] md:mt-[200px] lg:ml-[150px] md:ml-[150px] max-w-[450px] space-y-6 top-[10%] left-[3rem]">
@@ -31,14 +31,14 @@ const Banner = () => {
                                     <div className='des text-6xl font-extrabold '>Meet Your Next Favorite Book</div>
                                     <div className="flex gap-4">
                                         <button className="btn btn-outline bg-orange-400 text-white w-[120px] border-none">Latest Books</button>
-                                        <button className="btn btn-outline bg-black text-white w-[120px] border-none">Buy Now</button>
+                                        <button className="btn btn-outline bg-black text-white w-[120px] border-none">Add Now</button>
 
                                     </div>
 
 
 
                                 </div>
-                                <div className="justify-end lg:mr-24 md:mr-24 lg:mt-[80px]  sm:mt-2 ">
+                                <div className="justify-end lg:mr-24 md:mr-24 lg:mt-[80px]  sm:mt-2 mb-12 ">
                                     <img src={header1} alt="" />
                                 </div>
                             </div>
@@ -48,7 +48,7 @@ const Banner = () => {
 
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="image relative h-[750px] w-[1600px] mx-auto bg-[#FFF1DE]">
+                        <div className="image relative h-[850px] md:h-[850] lg:h-[750px] w-[1600px] mx-auto bg-[#FFF1DE]">
 
                             <div className="lg:flex  justify-between ">
                                 <div className="content justify-start title-content my-auto items-center lg:mt-[200px] md:mt-[200px] lg:ml-[150px] md:ml-[150px] max-w-[450px] space-y-6 top-[10%] left-[3rem]">
@@ -56,14 +56,14 @@ const Banner = () => {
                                     <div className='des text-6xl font-extrabold '>Meet Your Next Favorite Book</div>
                                     <div className="flex gap-4">
                                         <button className="btn btn-outline bg-orange-400 text-white w-[120px] border-none">Latest Books</button>
-                                        <button className="btn btn-outline bg-black text-white w-[120px] border-none">Buy Now</button>
+                                        <button className="btn btn-outline bg-black text-white w-[120px] border-none">Add Now</button>
 
                                     </div>
 
 
 
                                 </div>
-                                <div className="justify-end lg:mr-24 md:mr-24 lg:mt-[80px]  sm:mt-2 ">
+                                <div className="justify-end lg:mr-24 md:mr-24 lg:mt-[80px]  sm:mt-2 mb-12 ">
                                     <img className="h-[570px] " src={header2} alt="" />
                                 </div>
                             </div>
@@ -72,7 +72,7 @@ const Banner = () => {
                         </div>
                     </SwiperSlide>
                     <SwiperSlide>
-                        <div className="image relative h-[750px] w-[1600px] mx-auto bg-[#FFF1DE]">
+                        <div className="image relative  h-[850px] md:h-[850] lg:h-[750px] w-[1600px] mx-auto bg-[#FFF1DE]">
 
                             <div className="lg:flex  justify-between ">
                                 <div className="content justify-start title-content my-auto items-center lg:mt-[200px] md:mt-[200px] lg:ml-[150px] md:ml-[150px] max-w-[450px] space-y-6 top-[10%] left-[3rem]">
@@ -80,14 +80,14 @@ const Banner = () => {
                                     <div className='des text-6xl font-extrabold '>Meet Your Next Favorite Book</div>
                                     <div className="flex gap-4">
                                         <button className="btn btn-outline bg-orange-400 text-white w-[120px] border-none">Latest Books</button>
-                                        <button className="btn btn-outline bg-black text-white w-[120px] border-none">Buy Now</button>
+                                        <button className="btn btn-outline bg-black text-white w-[120px] border-none">Add Now</button>
 
                                     </div>
 
 
 
                                 </div>
-                                <div className="justify-end lg:mr-24 md:mr-24 lg:mt-[80px]  sm:mt-2 ">
+                                <div className="justify-end lg:mr-24 md:mr-24 lg:mt-[80px]  sm:mt-2 mb-12 ">
                                     <img src={header3} alt="" />
                                 </div>
                             </div>
