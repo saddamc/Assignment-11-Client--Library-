@@ -8,10 +8,15 @@ const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext);
 
-    const handleLogout = () => {
+    const handleSignOut = () => {
         logOut()
-            .then()
-            .catch()
+            .then(() => {
+                // Optional: Redirect to login page or perform any additional actions after logout
+            })
+            .catch(error => {
+                console.error("Error logging out:", error);
+                // Optionally, you can display an error message to the user
+            });
     }
 
 
@@ -56,20 +61,22 @@ const Navbar = () => {
                     {navItems}
                 </ul>
             </div>
+
+
             {
                 user &&
-
                 <div className="flex items-center">
                     <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
                         <div className="w-10 rounded-full">
                             <img alt="" src={user.photoURL} />
                         </div>
                     </div>
-                    <button onClick={handleLogout} className="login-button ml-2 p-2 rounded-md text-white font-bold bg-red-600 text-sm">Sign Out</button>
+                    <button onClick={handleSignOut} className="login-button ml-2 p-2 rounded-md text-white font-bold bg-red-600 text-sm">Sign Out</button>
                 </div>
-
-
             }
+
+
+
 
 
         </div>

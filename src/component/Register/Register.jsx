@@ -3,6 +3,7 @@ import { PiUserCirclePlusFill } from "react-icons/pi";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 const Register = () => {
@@ -10,6 +11,7 @@ const Register = () => {
     const { createUser } = useContext(AuthContext);
 
     const [registerError, setRegisterError] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const [success, setSuccess] = useState('');
     const navigate = useNavigate();
 
@@ -88,7 +90,7 @@ const Register = () => {
 
             <div>
                 <p className="text-left text-[#C4AC8C] ">.</p>
-                <div className="card shrink-0  mx-auto max-w-sm mt-[330px] shadow-2xl shadow-black bg-[#113B54] text-white">
+                <div className="card shrink-0  mx-auto w-[440px] mt-[330px] shadow-2xl shadow-black bg-[#113B54] text-white">
                     <div>
                         <h1 className="text-3xl flex items-center text-center justify-center gap-4 font-bold pt-8 border-b-1 mb-4 ">
                             <span className="text-6xl ">
@@ -96,8 +98,8 @@ const Register = () => {
                             </span> REGISTER</h1>
                     </div>
                     <hr></hr>
-                    <form onSubmit={handleRegister} className="card-body">
-                        <div className="form-control">
+                    <form onSubmit={handleRegister} className="card-body mx-auto">
+                        <div className="form-control w-[350px]">
                             <label className="label">
                                 <span className="label-text text-[#31aaf0] ">NAME</span>
                             </label>
@@ -108,7 +110,7 @@ const Register = () => {
                                 placeholder="name"
                                 className="input input-bordered text-black" required />
                         </div>
-                        <div className="form-control">
+                        <div className="form-control w-[350px]">
                             <label className="label">
                                 <span className="label-text text-[#31aaf0] ">USER EMAIL</span>
                             </label>
@@ -118,19 +120,21 @@ const Register = () => {
                                 placeholder="Your Email"
                                 className="input input-bordered text-black" required />
                         </div>
-                        <div className="form-control">
+                        <div className="form-control w-[350px]">
                             <label className="label">
                                 <span className="label-text text-[#31aaf0]">PASSWORD</span>
                             </label>
                             <div className="relative">
                                 <input
-                                    type="password"
+                                    type={showPassword ? "text" : "password"}
                                     name="password"
                                     placeholder="password"
-                                    className="input input-bordered w-full text-black "
+                                    className="input input-bordered w-full text-black"
                                     required />
-                                <span className="absolute mt-4 ml-1" >
-
+                                <span className="absolute mt-4 ml-1" onClick={() => setShowPassword(!showPassword)}>
+                                    {
+                                        showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>
+                                    }
 
                                 </span>
                             </div>
