@@ -5,11 +5,10 @@ import logo from "../../../public/logo.png"
 const Navbar = () => {
     const navItems = <>
         <li><Link to="/">Home</Link></li>
-        <li><Link>Add Book</Link></li>
-        <li><Link>All Books</Link></li>
-        <li><Link>Borrowed Books</Link></li>
-        <li><Link>Login</Link></li>
-
+        <li><Link to="/addbook">Add Book</Link></li>
+        <li><Link to="/allbooks">All Books</Link></li>
+        <li><Link to="/borrowedbooks">Borrowed Books</Link></li>
+        <li><Link to="/login">Login</Link></li>
     </>
     return (
         <div className="navbar h-28 mb-4 max-w-7xl mx-auto font-Roboto">
