@@ -24,6 +24,9 @@ const Register = () => {
         const password = form.get('password');
         console.log(name, email, password);
 
+        setRegisterError('');
+        setSuccess('');
+
         // password conditions
         if (password.length < 6) {
             Swal.fire({
@@ -70,7 +73,7 @@ const Register = () => {
                     title: "User Register Successfully !",
                     icon: "success"
                 });
-                event.target.reset();
+                // event.target.reset();
                 navigate(location?.state ? location.state : '/')
             })
             .catch(error => {

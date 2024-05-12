@@ -13,14 +13,14 @@ const Booking = () => {
 
         const form = event.target;
         const name = form.name.value;
-        const bookingDate = form.bookingDate.value;
+        const borrowDate = form.borrowDate.value;
         const returnDate = form.returnDate.value;
         const email = user?.email;
         const booking = {
             name,
             email,
             image,
-            bookingDate,
+            borrowDate,
             returnDate,
             book: name,
             book_id: _id,
@@ -38,7 +38,7 @@ const Booking = () => {
             {/* <div className="bg-[url('https://i.ibb.co/z4c38BH/booking.jpg')] bg-no-repeat w-[1200px] h-[170px] mx-auto ">
 
             </div> */}
-            <h2 className="justify-center rounded-md bg-red-300 py-4 text-center text-3xl text-white font-bold mt-8">Booking Your Book</h2>
+            <h2 className="justify-center rounded-md bg-red-300 py-4 text-center text-3xl text-white font-bold mt-8">Borrowed Your Book</h2>
             <h2 className="text-5xl border-b text-orange-400 border-black p-4 justify-center text-center mt-4 bor font-bold">{name} </h2>
             <img className="justify-center items-center mx-auto  my-8 w-[250px] h-[250px] " src={image} alt="" />
 
@@ -54,7 +54,7 @@ const Booking = () => {
                         <label className="label">
                             <span className="label-text">Booking Date</span>
                         </label>
-                        <input type="date" name="bookingDate" className="input input-bordered" required />
+                        <input type="date" name="borrowDate" className="input input-bordered" required />
 
                     </div>
 
@@ -73,7 +73,7 @@ const Booking = () => {
                     </div>
                 </div>
                 <div className="form-control mt-6">
-                    <input className="btn text-white text-2xl bg-red-300 btn-block" type="submit" value="Add Booking" />
+                    <input className="btn text-white text-2xl bg-red-300 btn-block" type="submit" value="Add Borrowed" />
                 </div>
             </form>
         </div>

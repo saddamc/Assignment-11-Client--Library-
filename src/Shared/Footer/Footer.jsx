@@ -5,7 +5,7 @@ const Footer = () => {
         <div className="bg-base-300 ">
             <footer className="footer p-10 max-w-[1500px] mx-auto  text-base-content">
                 <aside>
-                    <img className="bg-red-600 w-[150px] rounded-md p-1  " src={logo} alt="" />
+                    <img className="bg-red-500 w-[250px] rounded-md p-1  " src={logo} alt="" />
                     <p>Public Library Scientia<br />Providing best services since 1992</p>
                 </aside>
                 <nav>

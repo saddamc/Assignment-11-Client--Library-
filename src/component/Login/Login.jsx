@@ -41,7 +41,7 @@ const Login = () => {
                     title: "User Login Successfully !",
                     icon: "success"
                 });
-                event.target.reset();
+                // event.target.reset();
                 navigate(location?.state ? location.state : '/')
             })
             .catch(error => {

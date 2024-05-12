@@ -13,7 +13,7 @@ const Book = ({ book }) => {
                 <p className="text-lg text-orange-500 font-bold">Rating: {rating}.00 </p>
                 <p className='text-sm font-bold'>Category: {category} </p>
                 <div className="card-actions">
-                    <Link to={`/addbook/${_id}`}><button className="btn-sm bg-[rgb(245,57,120)] text-white">Booking Now</button></Link>
+                    <Link to={`/booking/${_id}`}><button className="btn-sm bg-[rgb(245,57,120)] text-white">Booking Now</button></Link>
                 </div>
             </div>
         </div>
