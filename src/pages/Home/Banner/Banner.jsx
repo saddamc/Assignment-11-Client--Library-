@@ -8,6 +8,7 @@ import header2 from "../../../assets/images/header2.jpg";
 import header3 from "../../../assets/images/header3.jpg";
 
 
+
 const Banner = () => {
     return (
         <div >

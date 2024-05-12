@@ -5,7 +5,7 @@ import img3 from "../../../assets/images/f-3.jpg";
 
 const Favourite = () => {
     return (
-        <div className="mx-auto max-w-7xl flex gap-6 px-12">
+        <div className="mx-auto max-w-6xl flex gap-6 px-12">
             <div className="card card-compact w-96 bg-base-100  shadow-xl rounded-md">
                 <figure><img className="w-96" src={img1} alt="Shoes" /></figure>
                 <div className="card-body bg-[#FF5252] text-white">
