@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import Book from "../Book/Book";
 import "./Books.css";
+import Book from "../Book/Book";
 
 
 
@@ -25,9 +25,9 @@ const Books = () => {
             </div>
             <div className="grid-container">
                 {
-                    books.map(book => <Book
-                        key={book._id}
-                        book={book}
+                    books.map(boo => <Book key={boo._id}
+                        boo={boo}
+
                     ></Book>)
                 }
 

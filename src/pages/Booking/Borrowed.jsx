@@ -5,8 +5,8 @@ import Swal from "sweetalert2";
 
 
 const Borrowed = () => {
-    const book = useLoaderData();
-    const { _id, image, name, author, rating, category } = book;
+    const boo = useLoaderData();
+    const { _id, image, name, author, book, rating, category } = boo;
     const { user } = useContext(AuthContext);
 
     const handleBorrowed = event => {
@@ -23,7 +23,7 @@ const Borrowed = () => {
             image,
             borrowDate,
             returnDate,
-            book: name,
+            book: book,
             book_id: _id,
             category: category,
             author: author,
