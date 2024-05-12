@@ -4,7 +4,8 @@ import Home from "../pages/Home/Home/Home";
 import Login from "../component/Login/Login";
 import Register from "../component/Register/Register";
 import Books from "../pages/Home/Books/Books";
-import Booking from "../pages/Booking/Booking";
+import Borrowed from "../pages/Booking/Borrowed";
+import BorrowBooks from "../pages/Booking/BorrowBooks";
 
 const router = createBrowserRouter([
     {
@@ -29,9 +30,13 @@ const router = createBrowserRouter([
                 element: <Books></Books>,
             },
             {
-                path: '/booking/:id',
-                element: <Booking></Booking>,
+                path: '/borrowed/:id',
+                element: <Borrowed></Borrowed>,
                 loader: ({ params }) => fetch(`http://localhost:5000/books/${params.id}`),
+            },
+            {
+                path: '/borrowbooks',
+                element: <BorrowBooks></BorrowBooks>,
             },
         ]
     },

@@ -1,23 +1,24 @@
 import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import Swal from "sweetalert2";
 
 
-const Booking = () => {
+const Borrowed = () => {
     const book = useLoaderData();
     const { _id, image, name, author, rating, category } = book;
     const { user } = useContext(AuthContext);
 
-    const handleBookingBook = event => {
-        event.prevantDefault();
+    const handleBorrowed = event => {
+        event.preventDefault();
 
         const form = event.target;
-        const name = form.name.value;
+        const name = user?.displayName;
         const borrowDate = form.borrowDate.value;
         const returnDate = form.returnDate.value;
         const email = user?.email;
-        const booking = {
-            name,
+        const borrowed = {
+            customerName: name,
             email,
             image,
             borrowDate,
@@ -28,7 +29,27 @@ const Booking = () => {
             author: author,
             rating: rating
         }
-        console.log(booking);
+        console.log(borrowed);
+
+        fetch('http://localhost:5000/borroweds', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(borrowed)
+        })
+            .then(res => res.json())
+            .then(data => {
+                // console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        icon: "success",
+                        title: "Book Borrowed Successfully",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                }
+            })
 
     }
 
@@ -42,7 +63,7 @@ const Booking = () => {
             <h2 className="text-5xl border-b text-orange-400 border-black p-4 justify-center text-center mt-4 bor font-bold">{name} </h2>
             <img className="justify-center items-center mx-auto  my-8 w-[250px] h-[250px] " src={image} alt="" />
 
-            <form onSubmit={handleBookingBook} className="card-body mb-24 border">
+            <form onSubmit={handleBorrowed} className="card-body mb-24 border">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
                     <div className="form-control">
                         <label className="label">
@@ -80,4 +101,4 @@ const Booking = () => {
     );
 };
 
-export default Booking;
+export default Borrowed;

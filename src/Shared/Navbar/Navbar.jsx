@@ -8,7 +8,6 @@ import { Link, NavLink } from "react-router-dom";
 const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext);
-    console.log(user);
 
     const handleLogout = () => {
         logOut()
@@ -25,10 +24,10 @@ const Navbar = () => {
         <li className="bg-rgb(255,81,70)"> <NavLink to="/allbooks">All Books</NavLink> </li>
 
 
-        {user ?
+        {user?.email ?
             <>
                 <li className="bg-rgb(255,81,70)"> <NavLink to="/addbook">Add Book</NavLink> </li>
-                <li className=""> <NavLink to="/borrowedbooks">Borrowed Books</NavLink> </li>
+                <li className=""> <NavLink to="/borrowbooks">Borrowed Books</NavLink> </li>
             </>
             :
             <>
@@ -62,7 +61,7 @@ const Navbar = () => {
 
 
     return (
-        <div className="navbar font-Fira bg-green-200 shadow-lg shadow-slate-400 h-[120px] mb-8 ">
+        <div className="navbar font-Fira  shadow-lg shadow-slate-400 h-[100px] mb-8 ">
             <div className="navbar max-w-[1280px] mx-auto z-10 ">
                 <div className="navbar-start">
                     <div className="dropdown">
@@ -88,7 +87,7 @@ const Navbar = () => {
 
 
                     {
-                        user &&
+                        user?.email &&
                         <div to="/login">
                             <div className="flex items-center">
                                 <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
