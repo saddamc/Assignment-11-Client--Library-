@@ -11,30 +11,23 @@ const Navbar = () => {
     const handleSignOut = () => {
         logOut()
             .then(() => {
-                // Optional: Redirect to login page or perform any additional actions after logout
+                console.log('logout click')
             })
             .catch(error => {
                 console.error("Error logging out:", error);
-                // Optionally, you can display an error message to the user
             });
     }
 
 
 
     const navItems = <>
-        {
-            user ?
-                <>
-                    <li><Link to="/">Home</Link></li>
-                    <li><Link to="/addbook">Add Book</Link></li>
-                    <li><Link to="/allbooks">All Books</Link></li>
-                    <li><Link to="/borrowedbooks">Borrowed Books</Link></li>
-
-                </>
-                :
-                <>
-                    <li><Link to="/login">Login</Link></li>
-                </>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/allbooks">All Books</Link></li>
+        {user?.email &&
+            <>
+                <li><Link to="/addbook">Add Book</Link></li>
+                <li><Link to="/borrowedbooks">Borrowed Books</Link></li>
+            </>
         }
     </>
 
@@ -64,16 +57,23 @@ const Navbar = () => {
 
 
             {
-                user &&
-                <div className="flex items-center">
-                    <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                        <div className="w-10 rounded-full">
-                            <img alt="" src={user.photoURL} />
+                user ?
+                    <div className="flex items-center">
+                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                <img alt="" src={user.photoUrl} />
+                            </div>
                         </div>
+                        <button onClick={handleSignOut} className="login-button ml-2 p-2 rounded-md text-white font-bold bg-red-600 text-sm">Sign Out</button>
                     </div>
-                    <button onClick={handleSignOut} className="login-button ml-2 p-2 rounded-md text-white font-bold bg-red-600 text-sm">Sign Out</button>
-                </div>
+                    :
+                    <Link to="/login">
+
+                        <button className="login-button p-2 rounded-md text-white font-semibold bg-black text-sm hover:bg-red-500 hover:rounded-md">Login</button>
+                    </Link>
+
             }
+            {/* <button onClick={handleSignOut} className="login-button ml-2 p-2 rounded-md text-white font-bold bg-red-600 text-sm">Sign Out</button> */}
 
 
 
