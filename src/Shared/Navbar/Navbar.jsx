@@ -11,11 +11,7 @@ const Navbar = () => {
 
     const handleLogout = () => {
         logOut()
-            .then(() => {
-                if (user) {
-                    // alert('login ')
-                }
-            })
+            .then()
             .catch()
     }
 

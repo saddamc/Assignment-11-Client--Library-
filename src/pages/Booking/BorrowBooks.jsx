@@ -32,12 +32,11 @@ const BorrowBooks = () => {
                     {/* head */}
                     <thead>
                         <tr className="bg-gray-200">
-                            <th>ACTION</th>
                             <th>IMAGE</th>
                             <th>BOOK</th>
                             <th>BORROWED DATE</th>
                             <th>RETURN DATE</th>
-                            <th>STATUS</th>
+                            <th>RETURN</th>
                         </tr>
                     </thead>
                     <tbody>

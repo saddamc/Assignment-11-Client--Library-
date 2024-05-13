@@ -1,27 +1,42 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/swiper-bundle.css";
-import 'swiper/css/navigation';
-import { Navigation } from 'swiper/modules';
-import "./Banner.css"
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+
+// Import Swiper styles
+import 'swiper/css'
+import 'swiper/css/pagination'
+import 'swiper/css/navigation'
+
+
+
+import "./Banner.css";
+
 import header1 from "../../../assets/images/header1.png";
 import header2 from "../../../assets/images/header2.jpg";
 import header3 from "../../../assets/images/header3.jpg";
+
+import "swiper/swiper-bundle.css";
+import 'swiper/css/navigation';
 
 
 
 const Banner = () => {
     return (
         <div >
-            <div className="banner-slider mx-auto mt-4 relative">
+            <div className="banner-slider mx-auto mt-4  px-6 py-10">
                 <Swiper
-                    className='relative group'
-                    spaceBetween={50}
-                    slidesPerView={1}
-                    navigation={{
-                        nextE1: ".button-next-slide",
-                        prevE1: ".button-prev-slide",
+                    spaceBetween={30}
+                    centeredSlides={true}
+                    loop={true}
+                    autoplay={{
+                        delay: 5000,
+                        disableOnInteraction: false,
                     }}
-                    modules={[Navigation]}
+                    pagination={{
+                        clickable: true,
+                    }}
+                    navigation={true}
+                    modules={[Autoplay, Pagination, Navigation]}
+                    className='mySwiper'
                 >
                     <SwiperSlide>
                         <div className="image relative  h-[850px] md:h-[850] lg:h-[750px] w-[1600px] mx-auto bg-[#FFF1DE]">

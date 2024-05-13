@@ -21,14 +21,17 @@ const Register = () => {
         }
     })
 
-    const handleRegister = event => {
+    const handleRegister = async event => {
         event.preventDefault();
 
         const form = new FormData(event.currentTarget);
         const name = form.get('name');
+        const photo = form.get('photo');
         const email = form.get('email');
         const password = form.get('password');
-        console.log(name, email, password);
+        console.log({ name, photo, email, password });
+
+
 
         setRegisterError('');
         setSuccess('');
@@ -76,12 +79,12 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                navigate(location?.state ? location.state : '/')
                 Swal.fire({
                     title: "User Register Successfully !",
                     icon: "success"
                 });
-                // event.target.reset();
-                navigate(location?.state ? location.state : '/')
+
             })
             .catch(error => {
                 console.error(error)
@@ -122,6 +125,17 @@ const Register = () => {
                                 placeholder="name"
                                 className="input input-bordered text-black" required />
                         </div>
+                        {/* photo url */}
+                        <div className="form-control w-[350px]">
+                            <label className="label">
+                                <span className="label-text text-[#31aaf0] ">PHOTO URL</span>
+                            </label>
+                            <input
+                                type="photo"
+                                name="photo"
+                                placeholder="url"
+                                className="input input-bordered text-black" required />
+                        </div>
                         <div className="form-control w-[350px]">
                             <label className="label">
                                 <span className="label-text text-[#31aaf0] ">USER EMAIL</span>
@@ -132,6 +146,7 @@ const Register = () => {
                                 placeholder="Your Email"
                                 className="input input-bordered text-black" required />
                         </div>
+
                         <div className="form-control w-[350px]">
                             <label className="label">
                                 <span className="label-text text-[#31aaf0]">PASSWORD</span>

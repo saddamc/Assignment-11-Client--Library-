@@ -1,3 +1,4 @@
+import { GiReturnArrow } from "react-icons/gi";
 
 
 const BorrowedList = ({ borrow, borrowed, setBorrowed }) => {
@@ -8,11 +9,6 @@ const BorrowedList = ({ borrow, borrowed, setBorrowed }) => {
 
     return (
         <tr>
-            <th>
-                <button className="btn btn-sm bg-black text-white btn-circle">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                </button>
-            </th>
             <td>
 
                 <div className="avatar">
@@ -22,16 +18,14 @@ const BorrowedList = ({ borrow, borrowed, setBorrowed }) => {
                         }
                     </div>
                 </div>
-
-
             </td>
             <td>
-                {book}
+                <p className="font-bold text-lg">{book}</p>
             </td>
             <td>{borrowDate}</td>
             <td>{returnDate}</td>
             <th>
-                <button className="btn btn-ghost btn-xs">details</button>
+                <button className="btn bg-lime-300 text-red-500 text-lg font-bold "> <GiReturnArrow /> </button>
             </th>
         </tr>
     );

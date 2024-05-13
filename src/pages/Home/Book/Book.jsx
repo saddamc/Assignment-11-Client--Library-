@@ -11,7 +11,10 @@ const Book = ({ boo }) => {
             <div className="card-body ">
                 <h2 className="card-title ">{book}</h2>
                 <p className="text-lg text-orange-500 font-bold">Rating: {rating}.00 </p>
-                <p className='text-sm font-bold'>Category: {category} </p>
+                <div className='flex justify-between'>
+                    <p className='text-sm font-bold'>Category: {category} </p>
+                    <p className='text-sm font-bold'>Author: {author} </p>
+                </div>
                 <div className="card-actions">
                     <Link to={`/borrowed/${_id}`}><button className="btn-sm bg-[rgb(245,57,120)] text-white">Borrow Now</button></Link>
                 </div>
