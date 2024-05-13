@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
+import axios from "axios";
 
 
 
@@ -28,25 +29,37 @@ const Login = () => {
         const form = new FormData(event.currentTarget);
         const email = form.get('email');
         const password = form.get('password');
-        console.log(email, password);
+        // console.log(email, password);
 
         setRegisterError('');
         setSuccess('');
 
         loginIn(email, password)
             .then(result => {
-                const user = result.user;
-                console.log(user);
-                Swal.fire({
-                    title: "User Login Successfully !",
-                    icon: "success"
-                });
+                const loggedInUser = result.user;
+                console.log(loggedInUser);
+                const user = { email };
+                // Swal.fire({
+                //     title: "User Login Successfully !",
+                //     icon: "success"
+                // });
                 // event.target.reset();
-                navigate(location?.state ? location.state : '/')
+                // navigate(location?.state ? location.state : '/')
+                axios.post('http://localhost:5000/jwt', user)
+                    .then(res => {
+                        console.log(res.data)
+                    })
+
+
             })
             .catch(error => {
-                console.log(error);
-                toast.error(error.message);
+                console.error(error)
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: "Something went wrong!",
+                    footer: (error.message.slice(9))
+                });
             })
     }
 

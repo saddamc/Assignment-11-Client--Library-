@@ -22,11 +22,12 @@ const Navbar = () => {
     const navLinks = <>
         <li className="bg-rgb(255,81,70)"> <NavLink to="/">Home</NavLink> </li>
         <li className="bg-rgb(255,81,70)"> <NavLink to="/allbooks">All Books</NavLink> </li>
+        <li className="bg-rgb(255,81,70)"> <NavLink to="/addbook">Add Book</NavLink> </li>
 
 
         {user?.email ?
             <>
-                <li className="bg-rgb(255,81,70)"> <NavLink to="/addbook">Add Book</NavLink> </li>
+
                 <li className=""> <NavLink to="/borrowbooks">Borrowed Books</NavLink> </li>
             </>
             :
@@ -56,7 +57,7 @@ const Navbar = () => {
             setTheme('light')
         }
     }
-    console.log(theme);
+    // console.log(theme);
 
 
 

@@ -18,19 +18,19 @@ const BorrowBooks = () => {
 
 
     return (
-        <div className="py-12">
-            <h2 className="text-5xl mx-auto text-center font-bold mb-12">Borrowed List: <span className="text-green-700">{borrowed.length}</span> </h2>
+        <div className="py-12 mx-auto max-w-7xl">
+            <h2 className="text-5xl mx-auto text-center font-bold mb-12">Borrowed Books: <span className="text-green-700">{borrowed.length}</span> </h2>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
                     <thead>
-                        <tr>
-                            <th>Action</th>
-                            <th>Name</th>
-                            <th>Book</th>
-                            <th>Borrowed Date</th>
-                            <th>Return Date</th>
-                            <th>Status</th>
+                        <tr className="bg-gray-200">
+                            <th>ACTION</th>
+                            <th>NAME</th>
+                            <th>BOOK</th>
+                            <th>BORROWED DATE</th>
+                            <th>RETURN DATE</th>
+                            <th>STATUS</th>
                         </tr>
                     </thead>
                     <tbody>
