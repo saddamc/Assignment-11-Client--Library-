@@ -1,6 +1,6 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { PiUserSwitchFill } from "react-icons/pi";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { toast } from "react-toastify";
 import Swal from "sweetalert2";
@@ -14,11 +14,17 @@ import axios from "axios";
 
 const Login = () => {
 
-    const { loginIn, googleLogin } = useContext(AuthContext);
+    const { loginIn, googleLogin, user, loading } = useContext(AuthContext);
 
     const [registerError, setRegisterError] = useState('');
     const [success, setSuccess] = useState('');
     const [showPassword, setShowPassword] = useState(false);
+
+    useEffect(() => {
+        if (user) {
+            navigate('/')
+        }
+    })
 
     const navigate = useNavigate();
     const location = useLocation();
@@ -45,8 +51,7 @@ const Login = () => {
 
 
                 /**get access token */
-                axios.post('http://localhost:5000/jwt', user,
-                    { withCredentials: true })
+                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
                     .then(res => {
                         console.log(res.data)
                         if (res.data.success) {
@@ -83,7 +88,7 @@ const Login = () => {
             })
     }
 
-
+    if (user || loading) return
 
 
     return (

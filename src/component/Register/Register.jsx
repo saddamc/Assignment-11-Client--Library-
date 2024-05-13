@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { PiUserCirclePlusFill } from "react-icons/pi";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
@@ -8,12 +8,18 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Register = () => {
 
-    const { createUser } = useContext(AuthContext);
+    const { createUser, user, loading } = useContext(AuthContext);
 
     const [registerError, setRegisterError] = useState('');
     const [showPassword, setShowPassword] = useState(false);
     const [success, setSuccess] = useState('');
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (user) {
+            navigate('/')
+        }
+    })
 
     const handleRegister = event => {
         event.preventDefault();
@@ -65,6 +71,7 @@ const Register = () => {
             return;
         }
 
+
         createUser(email, password)
             .then(result => {
                 const user = result.user;
@@ -86,6 +93,8 @@ const Register = () => {
                 });
             })
     }
+
+    if (user || loading) return;
 
     return (
         <div className="bg-[url('https://i.ibb.co/Xkw31hT/login.jpg')] bg-no-repeat h-[1300px]  mx-auto max-w-[1500px] text-center">

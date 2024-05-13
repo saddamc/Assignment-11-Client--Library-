@@ -8,6 +8,7 @@ import Borrowed from "../pages/Booking/Borrowed";
 import BorrowBooks from "../pages/Booking/BorrowBooks";
 import PrivateRoute from "./PrivateRoute";
 import AddBook from "../pages/AddBook/AddBook";
+import MyBids from "../pages/MyBids/MyBids";
 
 const router = createBrowserRouter([
     {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
             {
                 path: '/borrowbooks',
                 element: <PrivateRoute><BorrowBooks></BorrowBooks></PrivateRoute>,
+            },
+            {
+                path: '/my-bids',
+                element: <PrivateRoute><MyBids></MyBids> </PrivateRoute>,
             },
         ]
     },
