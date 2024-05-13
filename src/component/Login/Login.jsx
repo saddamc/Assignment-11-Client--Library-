@@ -36,18 +36,26 @@ const Login = () => {
 
         loginIn(email, password)
             .then(result => {
+                // const user = result.user;
+                // console.log(user)
                 const loggedInUser = result.user;
                 console.log(loggedInUser);
                 const user = { email };
-                // Swal.fire({
-                //     title: "User Login Successfully !",
-                //     icon: "success"
-                // });
-                // event.target.reset();
-                // navigate(location?.state ? location.state : '/')
-                axios.post('http://localhost:5000/jwt', user)
+
+
+
+                /**get access token */
+                axios.post('http://localhost:5000/jwt', user,
+                    { withCredentials: true })
                     .then(res => {
                         console.log(res.data)
+                        if (res.data.success) {
+                            Swal.fire({
+                                title: "User Login Successfully !",
+                                icon: "success"
+                            });
+                            navigate(location?.state ? location.state : '/')
+                        }
                     })
 
 

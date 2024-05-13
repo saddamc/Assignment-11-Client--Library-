@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import BorrowedList from "./BorrowedList";
+import axios from "axios";
 
 
 const BorrowBooks = () => {
@@ -10,9 +11,15 @@ const BorrowBooks = () => {
 
     const url = `http://localhost:5000/borroweds?email=${user?.email}`;
     useEffect(() => {
-        fetch(url)
-            .then(res => res.json())
-            .then(data => setBorrowed(data))
+
+        axios.get(url)
+            .then(res => {
+                setBorrowed(res.data);
+            })
+
+        // fetch(url)
+        //     .then(res => res.json())
+        //     .then(data => setBorrowed(data))
     }, [])
 
 
@@ -26,7 +33,7 @@ const BorrowBooks = () => {
                     <thead>
                         <tr className="bg-gray-200">
                             <th>ACTION</th>
-                            <th>NAME</th>
+                            <th>IMAGE</th>
                             <th>BOOK</th>
                             <th>BORROWED DATE</th>
                             <th>RETURN DATE</th>

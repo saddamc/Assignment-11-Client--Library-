@@ -4,16 +4,7 @@ const BorrowedList = ({ borrow, borrowed, setBorrowed }) => {
 
     const { _id, image, customerName, book, email, author, rating, category, borrowDate, returnDate } = borrow;
 
-    // const handleDelete = id => {
-    //     const proceed = confirm('delete ok');
-    //     if (proceed) {
-    //         fetch(``)
-    //             .then(res => res.json())
-    //             .then(data => {
-    //                 console.log(data);
-    //             })
-    //     }
-    // }
+
 
     return (
         <tr>
@@ -25,7 +16,7 @@ const BorrowedList = ({ borrow, borrowed, setBorrowed }) => {
             <td>
 
                 <div className="avatar">
-                    <div className="rounded w-8 h-8 my-4">
+                    <div className="rounded w-12 h-12 my-4">
                         {
                             image && <img src={image} alt="Avatar Tailwind CSS Component" />
                         }
