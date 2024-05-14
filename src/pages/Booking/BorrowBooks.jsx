@@ -16,11 +16,12 @@ const BorrowBooks = () => {
             .then(res => {
                 setBorrowed(res.data);
             })
-
-        // fetch(url)
-        //     .then(res => res.json())
-        //     .then(data => setBorrowed(data))
     }, [])
+
+    // fetch(url)
+    //     .then(res => res.json())
+    //     .then(data => setBorrowed(data))
+    // }, [])
 
 
 
@@ -32,8 +33,8 @@ const BorrowBooks = () => {
                     {/* head */}
                     <thead>
                         <tr className="bg-gray-200">
-                            <th>IMAGE</th>
-                            <th>BOOK</th>
+                            <th>BOOK IMAGE</th>
+                            <th>BOOK NAME</th>
                             <th>BORROWED DATE</th>
                             <th>RETURN DATE</th>
                             <th>RETURN</th>

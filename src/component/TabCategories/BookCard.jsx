@@ -1,8 +1,9 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import PropTypes from 'prop-types';
 
-const Book = ({ boo }) => {
 
-    const { _id, image, book, author, rating, category, } = boo;
+const BookCard = ({ bo }) => {
+    const { _id, image, author, book, rating, category } = bo || {};
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
@@ -16,11 +17,14 @@ const Book = ({ boo }) => {
                     <p className='text-sm font-bold'>Author: {author} </p>
                 </div>
                 <div className="card-actions">
-                    <Link to={`/borrowed/${_id}`}><button className="btn-sm bg-[rgb(245,57,120)] text-white">Borrow Now</button></Link>
+                    <Link to={`/borrowed/${_id}`}><button className="btn-sm bg-[rgb(245,57,120)] text-white">Details</button></Link>
                 </div>
             </div>
         </div>
     );
 };
 
-export default Book;
+export default BookCard;
+BookCard.propTypes = {
+    bo: PropTypes.func
+}
