@@ -2,14 +2,11 @@ import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
-// import DatePicker from "react-datepicker";
-// import "react-datepicker/dist/react-datepicker.css";
 
 
 const Borrowed = () => {
     const boo = useLoaderData();
     const { _id, image, author, book, rating, category, description } = boo;
-    // const [startDate, setStartDate] = useState(new Date());
     const { user } = useContext(AuthContext);
 
     const handleBorrowed = event => {
@@ -35,7 +32,7 @@ const Borrowed = () => {
         }
         console.log(borrowed);
 
-        fetch('http://localhost:5000/borroweds', {
+        fetch(`http://localhost:5000/borroweds`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -77,7 +74,7 @@ const Borrowed = () => {
             </div>
 
             <form onSubmit={handleBorrowed} className="card-body mb-24 border m-8">
-                <h2 className="justify-center rounded-md bg-red-300 py-2 text-center text-2xl text-white font-bold mt-8">Borrowed Your Book</h2>
+                <h2 className="justify-center rounded-md bg-red-300 py-2 text-center text-2xl text-white font-bold mt-8">Borrowed Details</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 ">
 
                     <div className="form-control">

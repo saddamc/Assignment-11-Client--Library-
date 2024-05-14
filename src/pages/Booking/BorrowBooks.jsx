@@ -34,11 +34,13 @@ const BorrowBooks = () => {
                     {/* head */}
                     <thead>
                         <tr className="bg-gray-200">
-                            <th>BOOK IMAGE</th>
+                            <th>IMAGE</th>
                             <th>BOOK NAME</th>
+                            <th>CATEGORY</th>
                             <th>BORROWED DATE</th>
                             <th>RETURN DATE</th>
                             <th>RETURN</th>
+                            <th>UPDATE</th>
                         </tr>
                     </thead>
                     <tbody>

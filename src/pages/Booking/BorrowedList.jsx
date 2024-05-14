@@ -1,4 +1,6 @@
 import { GiReturnArrow } from "react-icons/gi";
+import { GrUpdate } from "react-icons/gr";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
@@ -27,7 +29,7 @@ const BorrowedList = ({ borrow, borrowed, setBorrowed }) => {
                         console.log(data);
                         if (data.deleleCount > 0) {
                             Swal.fire({
-                                title: "Deleted!",
+                                title: "RETURN!",
                                 text: "Your Book return Successfully.",
                                 icon: "success"
                             });
@@ -58,10 +60,31 @@ const BorrowedList = ({ borrow, borrowed, setBorrowed }) => {
             <td>
                 <p className="font-bold text-lg">{book}</p>
             </td>
+            <td>
+                <p
+                    className={`px-3 py-3 ${category === 'Sci-Fi' &&
+                        'text-blue-500 bg-blue-100/60'
+                        } ${category === 'Drama' &&
+                        'text-emerald-500 bg-emerald-100/60'
+                        } ${category === 'History' &&
+                        'text-pink-500 bg-pink-100/60'
+                        } ${category === 'Thriller' &&
+                        'text-purple-900 bg-cyan-100/60'
+                        } text-xs  rounded-full text-center`}
+                >
+                    {category}
+                </p>
+            </td>
             <td>{borrowDate}</td>
             <td>{returnDate}</td>
             <th>
                 <button onClick={() => handleDelete(_id)} className="btn bg-lime-300 text-red-500 text-lg font-bold "> <GiReturnArrow /> </button>
+            </th>
+            <th>
+
+                <button className="btn bg-lime-500 w-[75px] text-red-500 text-2xl font-bold "><GrUpdate /> </button>
+
+
             </th>
         </tr>
     );

@@ -1,13 +1,20 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { useLoaderData, useNavigate } from "react-router-dom";
+import axios from "axios";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { data } from "autoprefixer";
 
-const AddBook = () => {
+
+const UpdateBooks = () => {
     const { user } = useContext(AuthContext);
+    const books = useLoaderData();
+    console.log(books);
+    const { _id, image, author, rating, category, book, description } = books;
     const navigate = useNavigate();
 
-    const handleAddBook = event => {
+
+    const handleUpdateBook = event => {
         event.preventDefault();
 
         const form = event.target;
@@ -18,7 +25,7 @@ const AddBook = () => {
         const category = form.category.value;
         const rating = form.rating.value;
         const description = form.description.value;
-        const bookPost = {
+        const bookData = {
             book,
             image,
             email,
@@ -27,40 +34,39 @@ const AddBook = () => {
             rating,
             description,
         }
-        console.log(bookPost);
+        console.log(bookData);
 
-        fetch((`${import.meta.env.VITE_API_URL}/book`), {
-            method: 'POST',
+        // send data to the server
+        fetch(`http://localhost:5000/books/${_id}`, {
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(bookPost)
+            body: JSON.stringify(bookData)
         })
             .then(res => res.json())
             .then(data => {
-                // console.log(data);
-                if (data.insertedId) {
+                console.log(data);
+                if (data.modifiedCount > 0) {
                     Swal.fire({
-                        icon: "success",
-                        title: "Book Add Successfully",
-                        showConfirmButton: false,
-                        timer: 1500
+                        title: "Good job!",
+                        text: "Product Updated Successfully !",
+                        icon: "success"
                     });
-                    navigate('/my-books')
                 }
+                navigate('/my-books')
+
             })
-
     }
-
 
     return (
         <div className='flex justify-center items-center min-h-[calc(100vh-306px)] my-12'>
             <section className=' p-2 md:p-6 mx-auto bg-white rounded-md shadow-md '>
                 <h2 className='text-3xl text-center mb-12 border-b pb-4 font-semibold text-gray-700 capitalize '>
-                    Add Book
+                    Update Book
                 </h2>
 
-                <form onSubmit={handleAddBook}>
+                <form onSubmit={handleUpdateBook}>
                     <div className='grid grid-cols-1 gap-6 mt-4 sm:grid-cols-2'>
                         <div>
                             <label className='text-gray-700 ' htmlFor='book'>
@@ -71,6 +77,7 @@ const AddBook = () => {
                                 name='book'
                                 placeholder="Book Name"
                                 type='text'
+                                defaultValue={book}
                                 required
                                 className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
                             />
@@ -84,6 +91,7 @@ const AddBook = () => {
                                 name='image'
                                 placeholder="Photo url"
                                 type='text'
+                                defaultValue={image}
                                 required
                                 className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
                             />
@@ -111,6 +119,7 @@ const AddBook = () => {
                                 name='author'
                                 placeholder="Author Name"
                                 type='text'
+                                defaultValue={author}
                                 required
                                 className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
                             />
@@ -123,6 +132,7 @@ const AddBook = () => {
                             <select
                                 name='category'
                                 id='category'
+                                defaultValue={category}
                                 className='border p-2 rounded-md'
                             >
                                 <option value='Sci-Fi'>Sci-Fi</option>
@@ -140,6 +150,7 @@ const AddBook = () => {
                                 name='rating'
                                 placeholder="rating 1-5"
                                 type='number'
+                                defaultValue={rating}
                                 required
                                 className='block w-full px-4 py-2 mt-2 text-gray-700 bg-white border border-gray-200 rounded-md  focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40  focus:outline-none focus:ring'
                             />
@@ -156,11 +167,12 @@ const AddBook = () => {
                             name='description'
                             required
                             id='description'
+                            defaultValue={description}
                         ></textarea>
                     </div>
                     <div className='flex justify-end mt-6'>
                         <button className='px-8 py-2.5 leading-5 text-white transition-colors duration-300 transhtmlForm bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600'>
-                            Add
+                            Update
                         </button>
                     </div>
                 </form>
@@ -169,4 +181,4 @@ const AddBook = () => {
     );
 };
 
-export default AddBook;
+export default UpdateBooks;

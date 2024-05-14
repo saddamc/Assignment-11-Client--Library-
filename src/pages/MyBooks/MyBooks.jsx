@@ -25,23 +25,6 @@ const MyBooks = () => {
 
 
 
-    // const handleDelete = async id => {
-    //     try {
-    //         const { data } = await axios.delete(
-    //             `${import.meta.env.VITE_API_URL}/book/${id}`
-    //         )
-    //         console.log(data)
-    //         toast.success('Delete Successful')
-
-    //         //refresh ui
-    //         getData()
-    //     } catch (err) {
-    //         console.log(err.message)
-    //         toast.error(err.message)
-    //     }
-    // }
-
-
     return (
         <div className="py-12 mx-auto max-w-7xl font-Fira">
             <h2 className="text-5xl mx-auto text-center font-bold mb-12  text-yellow-600">My Books: {books.length} <span className="text-green-700"> </span> </h2>
@@ -54,7 +37,9 @@ const MyBooks = () => {
                             <th>BOOK IMAGE</th>
                             <th>BOOK NAME</th>
                             <th>AUTHOR</th>
-                            <th>UPDATE BOOK <span className="ml-4">REMOVE BOOK</span></th>
+                            <th>CATEGORY</th>
+                            <th>UPDATE BOOK </th>
+                            <th>REMOVE BOOK</th>
                         </tr>
                     </thead>
                     <tbody>

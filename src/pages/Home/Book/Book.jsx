@@ -1,3 +1,4 @@
+import { GrUpdate } from 'react-icons/gr';
 import { Link } from 'react-router-dom';
 
 const Book = ({ boo }) => {
@@ -15,8 +16,12 @@ const Book = ({ boo }) => {
                     <p className='text-sm font-bold'>Category: {category} </p>
                     <p className='text-sm font-bold'>Author: {author} </p>
                 </div>
-                <div className="card-actions">
-                    <Link to={`/borrowed/${_id}`}><button className="btn-sm bg-[rgb(245,57,120)] text-white">Borrow Now</button></Link>
+                <div className='flex justify-between'>
+                    <div className="card-actions">
+                        <Link to={`/borrowed/${_id}`}><button className="btn-sm bg-[rgb(245,57,120)] text-white">Details</button></Link>
+                    </div>
+
+
                 </div>
             </div>
         </div>
