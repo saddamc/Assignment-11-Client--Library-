@@ -1,5 +1,5 @@
-import { GrUpdate } from 'react-icons/gr';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const Book = ({ boo }) => {
 
@@ -29,3 +29,6 @@ const Book = ({ boo }) => {
 };
 
 export default Book;
+Book.propTypes = {
+    boo: PropTypes.func
+}

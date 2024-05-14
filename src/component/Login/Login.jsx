@@ -51,7 +51,7 @@ const Login = () => {
 
 
                 /**get access token */
-                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+                axios.post(`${import.meta.env.VITE_API_URL}/jwt`, user, { withCredentials: true })
                     .then(res => {
                         console.log(res.data)
                         if (res.data.success) {

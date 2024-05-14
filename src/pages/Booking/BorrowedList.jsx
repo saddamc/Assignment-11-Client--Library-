@@ -1,7 +1,7 @@
 import { GiReturnArrow } from "react-icons/gi";
 import { GrUpdate } from "react-icons/gr";
-import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import PropTypes from 'prop-types';
 
 
 const BorrowedList = ({ borrow, borrowed, setBorrowed }) => {
@@ -21,7 +21,7 @@ const BorrowedList = ({ borrow, borrowed, setBorrowed }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/borroweds/${_id}`, {
+                fetch(`${import.meta.env.VITE_API_URL}/borroweds/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
@@ -91,3 +91,6 @@ const BorrowedList = ({ borrow, borrowed, setBorrowed }) => {
 };
 
 export default BorrowedList;
+BorrowedList.propTypes = {
+    borrow: PropTypes.func
+}

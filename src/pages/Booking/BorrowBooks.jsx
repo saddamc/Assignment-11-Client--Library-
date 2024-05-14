@@ -9,7 +9,7 @@ const BorrowBooks = () => {
     const { user } = useContext(AuthContext);
     const [borrowed, setBorrowed] = useState([]);
 
-    const url = `http://localhost:5000/borroweds?email=${user?.email}`;
+    const url = `${import.meta.env.VITE_API_URL}/borroweds?email=${user?.email}`;
 
     useEffect(() => {
 

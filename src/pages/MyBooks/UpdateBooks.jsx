@@ -1,9 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
 import { useLoaderData, useNavigate } from "react-router-dom";
-import axios from "axios";
 import Swal from "sweetalert2";
-import { data } from "autoprefixer";
 
 
 const UpdateBooks = () => {
@@ -37,7 +35,7 @@ const UpdateBooks = () => {
         console.log(bookData);
 
         // send data to the server
-        fetch(`http://localhost:5000/books/${_id}`, {
+        fetch(`${import.meta.env.VITE_API_URL}/books/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

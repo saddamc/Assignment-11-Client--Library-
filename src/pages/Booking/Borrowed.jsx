@@ -33,7 +33,7 @@ const Borrowed = () => {
         }
         console.log(borrowed);
 
-        fetch(`http://localhost:5000/borroweds`, {
+        fetch(`${import.meta.env.VITE_API_URL}/borroweds`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

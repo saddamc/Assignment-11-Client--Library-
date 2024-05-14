@@ -2,6 +2,7 @@ import { FcDeleteDatabase } from 'react-icons/fc';
 import { GrUpdate } from 'react-icons/gr';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import PropTypes from 'prop-types';
 
 const MyBooksDetails = ({ borrow, books, setBooks }) => {
     const { _id, image, author, rating, category, book, description } = borrow;
@@ -19,7 +20,7 @@ const MyBooksDetails = ({ borrow, books, setBooks }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/books/${_id}`, {
+                fetch(`${import.meta.env.VITE_API_URL}/books/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
@@ -86,3 +87,6 @@ const MyBooksDetails = ({ borrow, books, setBooks }) => {
 };
 
 export default MyBooksDetails;
+MyBooksDetails.propTypes = {
+    borrow: PropTypes.func
+}
