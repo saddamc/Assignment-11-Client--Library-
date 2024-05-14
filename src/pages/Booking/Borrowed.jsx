@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 
 const Borrowed = () => {
     const boo = useLoaderData();
-    const { _id, image, author, book, rating, category, description } = boo;
+    const { _id, image, author, book, rating, category, description, quantity } = boo;
     const { user } = useContext(AuthContext);
 
     const handleBorrowed = event => {
@@ -29,6 +29,7 @@ const Borrowed = () => {
             author: author,
             rating: rating,
             description: description,
+            quantity: quantity,
         }
         console.log(borrowed);
 
@@ -63,6 +64,7 @@ const Borrowed = () => {
 
             <div className="border m-8">
                 <h2 className="text-5xl border-b text-orange-400 border-black p-4 justify-center text-center mt-4 bor font-bold">{book} </h2>
+                <p> Quantity: {quantity} </p>
                 <img className="justify-center items-center mx-auto  my-8 w-[250px] h-[250px] " src={image} alt="" />
                 <div className="justify-center text-center font-bold space-y-2 mb-4 ">
                     <p> Author Name : {author} </p>
