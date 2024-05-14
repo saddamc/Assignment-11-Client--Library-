@@ -10,7 +10,7 @@ const TabCategories = () => {
     const [books, setBooks] = useState([]);
 
     // useEffect(() => {
-    //     axios.get('http://localhost:5000/books')
+    //     axios.get(`${import.meta.env.VITE_API_URL}/book`)
     //         .then(data => {
     //             setBooks(data.data);
     //         })
@@ -20,7 +20,7 @@ const TabCategories = () => {
 
     useEffect(() => {
         const getData = async () => {
-            const { data } = await axios(`${import.meta.env.VITE_API_URL}/books`)
+            const { data } = await axios(`${import.meta.env.VITE_API_URL}/book`)
             setBooks(data)
             console.log(data)
         }

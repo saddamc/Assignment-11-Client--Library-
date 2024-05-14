@@ -22,7 +22,7 @@ import 'swiper/css/navigation';
 const Banner = () => {
     return (
         <div >
-            <div className="banner-slider mx-auto mt-4  px-6 py-10">
+            <div className="banner-slider mx-auto  px-6 pb-10">
                 <Swiper
                     spaceBetween={30}
                     centeredSlides={true}

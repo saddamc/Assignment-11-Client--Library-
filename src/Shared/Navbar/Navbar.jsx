@@ -24,7 +24,7 @@ const Navbar = () => {
         {user?.email ?
             <>
 
-                <li className=""> <NavLink to="/my-bids">My Bids</NavLink> </li>
+                <li className=""> <NavLink to="/my-books">My Books</NavLink> </li>
                 <li className=""> <NavLink to="/borrowbooks">Borrowed Books</NavLink> </li>
             </>
             :

@@ -10,7 +10,7 @@ const Books = () => {
     const [books, setBooks] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/books')
+        axios.get(`${import.meta.env.VITE_API_URL}/book`)
             .then(data => {
                 setBooks(data.data);
             })
