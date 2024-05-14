@@ -8,7 +8,6 @@ import Borrowed from "../pages/Booking/Borrowed";
 import BorrowBooks from "../pages/Booking/BorrowBooks";
 import PrivateRoute from "./PrivateRoute";
 import AddBook from "../pages/AddBook/AddBook";
-import BookDetails from "../pages/BookDetails/BookDetails";
 import MyBooks from "../pages/MyBooks/MyBooks";
 import ErrorPages from "../pages/ErrorPages/ErrorPages";
 
@@ -21,7 +20,7 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch(`${import.meta.env.VITE_API_URL}/book`),
+                // loader: () => fetch(`${import.meta.env.VITE_API_URL}/book`),
             },
             {
                 path: '/login',
@@ -34,10 +33,6 @@ const router = createBrowserRouter([
             {
                 path: '/allbooks',
                 element: <Books></Books>,
-            },
-            {
-                path: '/book/:id',
-                element: <BookDetails></BookDetails>,
             },
             {
                 path: '/addbook',

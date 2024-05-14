@@ -1,25 +1,24 @@
-import { GiReturnArrow } from "react-icons/gi";
-import Swal from "sweetalert2";
+import { FcDeleteDatabase } from 'react-icons/fc';
+import { GrUpdate } from 'react-icons/gr';
+import Swal from 'sweetalert2';
 
-
-const BorrowedList = ({ borrow, borrowed, setBorrowed }) => {
-
-    const { _id, image, customerName, book, email, author, rating, category, borrowDate, returnDate } = borrow;
+const MyBooksDetails = ({ borrow, books, setBooks }) => {
+    const { _id, image, author, rating, category, book, description } = borrow;
 
     const handleDelete = _id => {
         console.log(_id);
         Swal.fire({
             title: "Are you sure?",
-            text: "You want to return this book!",
+            text: "You won't be able to revert this!",
             icon: "warning",
             showCancelButton: true,
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, Return it!"
+            confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:5000/borroweds/${_id}`, {
+                fetch(`http://localhost:5000/books/${_id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
@@ -28,19 +27,17 @@ const BorrowedList = ({ borrow, borrowed, setBorrowed }) => {
                         if (data.deleleCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",
-                                text: "Your Book return Successfully.",
+                                text: "Your file has been deleted.",
                                 icon: "success"
                             });
-                            const remaining = borrowed.filter(cof => cof._id !== _id);
-                            setBorrowed(remaining);
+                            const remaining = books.filter(cof => cof._id !== _id);
+                            setBooks(remaining);
                         }
                     })
             }
         });
 
     }
-
-
 
 
     return (
@@ -58,13 +55,13 @@ const BorrowedList = ({ borrow, borrowed, setBorrowed }) => {
             <td>
                 <p className="font-bold text-lg">{book}</p>
             </td>
-            <td>{borrowDate}</td>
-            <td>{returnDate}</td>
-            <th>
-                <button onClick={() => handleDelete(_id)} className="btn bg-lime-300 text-red-500 text-lg font-bold "> <GiReturnArrow /> </button>
+            <td>{author}</td>
+            <th className='flex gap-4'>
+                <button className="btn bg-lime-500 w-[75px] text-red-500 text-2xl font-bold "><GrUpdate /> </button>
+                <button onClick={() => handleDelete(_id)} className="btn text- w-[75px]  text-5xl bg-yellow-100 font-bold "><FcDeleteDatabase /> </button>
             </th>
         </tr>
     );
 };
 
-export default BorrowedList;
+export default MyBooksDetails;
