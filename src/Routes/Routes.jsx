@@ -42,12 +42,12 @@ const router = createBrowserRouter([
             {
                 path: '/update/:id',
                 element: <PrivateRoute><UpdateBooks></UpdateBooks> </PrivateRoute>,
-                loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/book/${params.id}`),
+                loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/books/${params.id}`),
             },
             {
                 path: '/borrowed/:id',
                 element: <PrivateRoute><Borrowed></Borrowed></PrivateRoute>,
-                loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/book/${params.id}`),
+                loader: ({ params }) => fetch(`${import.meta.env.VITE_API_URL}/books/${params.id}`),
             },
             {
                 path: '/borrowbooks',

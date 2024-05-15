@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 const UpdateBooks = () => {
     const { user } = useContext(AuthContext);
     const books = useLoaderData();
-    console.log(books);
+    // console.log(books);
     const { _id, image, author, rating, category, book, description } = books;
     const navigate = useNavigate();
 

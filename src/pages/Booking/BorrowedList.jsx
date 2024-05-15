@@ -9,7 +9,7 @@ const BorrowedList = ({ borrow, borrowed, setBorrowed }) => {
     const { _id, image, customerName, book, email, author, rating, category, borrowDate, returnDate } = borrow;
 
     const handleDelete = _id => {
-        console.log(_id);
+        // console.log(_id);
         Swal.fire({
             title: "Are you sure?",
             text: "You want to return this book!",

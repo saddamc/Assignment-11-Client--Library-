@@ -2,7 +2,6 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { PiUserSwitchFill } from "react-icons/pi";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-import { toast } from "react-toastify";
 import Swal from "sweetalert2";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";

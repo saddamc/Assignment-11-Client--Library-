@@ -22,7 +22,7 @@ const TabCategories = () => {
         const getData = async () => {
             const { data } = await axios(`${import.meta.env.VITE_API_URL}/book`)
             setBooks(data)
-            console.log(data)
+            // console.log(data)
         }
         getData()
     }, [])

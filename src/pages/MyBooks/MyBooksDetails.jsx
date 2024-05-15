@@ -8,7 +8,7 @@ const MyBooksDetails = ({ borrow, books, setBooks }) => {
     const { _id, image, author, rating, category, book, description } = borrow;
 
     const handleDelete = _id => {
-        console.log(_id);
+        // console.log(_id);
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
